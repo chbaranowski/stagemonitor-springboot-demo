@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<body>
+
+ <table class="table table-bordered table-striped">
+  <thead>
+   <tr>
+    <td>ID</td>
+    <td>Title</td>
+    <td>Description</td>
+   </tr>
+  </thead>
+  <tbody>
+   <tr th:if="${reviews.empty}">
+    <td colspan="3">No reviews</td>
+   </tr>
+   <tr th:each="review : ${reviews}">
+    <td th:text="${review.id}">1</td>
+    <td th:text="${review.title}">Title</td>
+    <td th:text="${review.description}">Description</td>
+   </tr>
+  </tbody>
+ </table>
+
+
+</body>
+</html>
